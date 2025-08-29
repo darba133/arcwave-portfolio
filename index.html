@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture Portfolio - Home</title>
+  <!-- SEO Meta Description -->
+  <meta name="description" content="Arcwave Architecture Portfolio – Explore modern residential and interior designs that blend geometry, light, and emotion. Discover our projects and vision.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'GeorgianCustom';
+      src: url('fontname.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', Arial, sans-serif;
+      color: #111;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+
+    .content {
+      background-image: url('background.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      background-color: #f1f1f1cc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 120px;
+      margin-right: 1rem;
+    }
+
+    .logo h2 {
+      font-size: 2rem;
+      font-family: 'GeorgianCustom', sans-serif;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      margin-right: 2rem;
+      text-decoration: none;
+      color: #000000;
+    }
+
+    nav a:hover {
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 8rem 2rem;
+      text-align: left;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 2.1rem;
+      margin: 0;
+      color: #000;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-top: 1rem;
+      color: #000;
+    }
+
+    .georgian-text-block {
+      margin-top: 2rem;
+    }
+
+    .georgian-text {
+      font-family: 'GeorgianCustom', sans-serif;
+      margin: 0.25rem 0;
+      color: #000;
+    }
+
+    .cta-button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background-color: #a5a493;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      background-color: #8f8e89;
+      transition: background-color 0.3s ease;
+    }
+
+    .animated-lines {
+      margin-top: 3rem;
+    }
+
+    .line {
+      background-color: #a5a493;
+      width: 0;
+      animation: drawLine 2s forwards;
+    }
+
+    .line:nth-child(1) {
+      height: 4px;
+    }
+
+    .line:nth-child(2) {
+      height: 2px;
+      animation-delay: 1s;
+      margin-top: 0.5rem;
+      animation-name: drawShortLine;
+    }
+
+    @keyframes drawLine {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes drawShortLine {
+      from { width: 0; }
+      to { width: 80%; }
+    }
+
+    .vertical-lines {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .vertical-line {
+      background-color: #a5a493;
+      width: 2px;
+      height: 0;
+      animation: drawVerticalLine 2s forwards;
+      margin-right: 0.5rem;
+    }
+
+    .vertical-line.top {
+      animation-delay: 1s;
+    }
+
+    .vertical-line.center {
+      animation-delay: 2s;
+      margin-top: 50%;
+    }
+
+    @keyframes drawVerticalLine {
+      from { height: 0; }
+      to { height: 100px; }
+    }
+
+    .floating-ball {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #f7c9ab;
+      position: fixed;
+      top: 220px;
+      right: 350px;
+      animation: float 2s ease-in-out infinite;
+      will-change: transform;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    footer {
+      background-color: #babaac;
+      color: #fff;
+      padding: 2rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+
+    footer a {
+      color: #000000;
+      text-decoration: none;
+      margin-right: 2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    footer img {
+      margin-right: 0.5rem;
+    }
+
+    footer a:hover {
+      color: #f7c9ab;
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-ball"></div>
+
+  <div class="content">
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="ArcWave Logo" />
+        <h2>არქვეივი</h2>
+      </div>
+      <nav>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Where architecture meets reality.</h1>
+      <p>Geometry. Light. Emotion.</p>
+      <div class="georgian-text-block">
+        <p class="georgian-text">გეომეტრია. სინათლე. ემოცია.</p>
+        <p class="georgian-text">ადგილი სადაც არქიტექტურა რეალობას ერწყმის.</p>
+      </div>
+      <a class="cta-button" href="projects.html">View Projects</a>
+
+      <div class="animated-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+      <div class="vertical-lines">
+        <div class="vertical-line top"></div>
+        <div class="vertical-line center"></div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <a href="https://www.facebook.com/profile.php?id=61556435062329" target="_blank">
+      <img src="facebook-logo.png" alt="Facebook" width="40" />
+      Facebook
+    </a>
+    <a href="https://www.instagram.com/_arcwave__/" target="_blank">
+      <img src="instagram-logo.png" alt="Instagram" width="40" />
+      Instagram
+    </a>
+  </footer>
+</body>
+</html>
