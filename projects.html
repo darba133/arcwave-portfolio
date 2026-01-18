@@ -4,187 +4,122 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects - Architecture Portfolio</title>
-  <meta name="description" content="Explore Arcwave Architecture's portfolio of innovative projects, including residential, interior, and nature-integrated designs. See our creative approach to architecture and design.">
-
-  <!-- Google Font Orbitron -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400&display=swap" rel="stylesheet">
-
   <style>
     @font-face {
       font-family: 'GeorgianCustom';
       src: url('fontname.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
     }
-
     body {
       margin: 0;
       font-family: 'Orbitron', Arial, sans-serif;
       color: #111;
-      position: relative;
-      overflow-x: hidden;
       min-height: 100vh;
+      position: relative;
     }
-
     body::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('background.png') no-repeat center center;
-      background-size: cover;
+      inset: 0;
+      background: url('background.png') center / cover no-repeat;
       opacity: 0.3;
       z-index: -1;
     }
-
     header {
-      background-color: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(4px);
+      background: rgba(255,255,255,0.9);
       padding: 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
     .logo img {
       height: 120px;
-      width: auto;
-      display: block;
     }
-
     nav a {
       margin-left: 2rem;
       text-decoration: none;
       color: #111;
-      font-family: 'Orbitron', Arial, sans-serif;
     }
-
     nav a:hover {
       font-weight: bold;
     }
-
     .projects {
+      padding: 4rem 2rem;
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      padding: 4rem 2rem;
     }
-
     .project-card {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255,255,255,0.85);
       padding: 2rem;
       border: 1px solid #ddd;
     }
-
-    .project-card h3 {
-      font-family: 'Orbitron', Arial, sans-serif;
-    }
-
     .project-images {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1rem;
       margin-bottom: 1rem;
     }
-
     .project-images img {
       width: 100%;
-      height: auto;
-      border: 1px solid #ccc;
       border-radius: 8px;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform .3s;
     }
-
     .project-images img:hover {
       transform: scale(1.05);
     }
-
     .georgian-text {
       font-family: 'GeorgianCustom', sans-serif;
     }
-
+    /* Modal styles */
     .modal {
       display: none;
       position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      inset: 0;
+      background: rgba(0,0,0,0.85);
       justify-content: center;
       align-items: center;
+      z-index: 999;
     }
-
     .modal img {
       max-width: 90%;
       max-height: 80%;
       border-radius: 8px;
     }
-
-    .modal:target {
-      display: flex;
-    }
-
     .close-btn {
       position: absolute;
       top: 15px;
       right: 15px;
       font-size: 2rem;
       color: #fff;
-      background: rgba(0, 0, 0, 0.7);
+      background: none;
       border: none;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
-
-    .close-btn:hover {
-      background: rgba(255, 0, 0, 0.8);
-    }
-
     footer {
-      background-color: #babaac;
-      color: #000;
+      background: #babaac;
       padding: 2rem;
-      text-align: left;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      align-items: center;
     }
-
+    footer img {
+      height: 30px;
+      margin-right: .5rem;
+    }
     footer a {
-      color: #000;
       text-decoration: none;
+      color: #000;
       display: flex;
       align-items: center;
-      transition: color 0.3s ease;
-    }
-
-    footer img {
-      margin-right: 0.5rem;
-      height: 30px;
-      width: auto;
-    }
-
-    footer a:hover {
-      color: #f7c9ab;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="logo.png" alt="Architecture Portfolio Logo" />
+      <img src="logo.png" alt="Arcwave Logo">
     </div>
     <nav>
       <a href="index.html">Home</a>
@@ -195,75 +130,219 @@
   <section class="projects">
     <!-- Project 1 -->
     <div class="project-card">
-      <h3>Oroko Lisi</h3>
+      <h3>დასახლება OROKO LISI,ინდივიდუალური საცხოვრებელი სახლი.</h3>
       <div class="project-images">
-        <a href="#img1"><img src="project1.png" alt="View 1"></a>
-        <a href="#img2"><img src="project2.png" alt="View 2"></a>
-        <a href="#img3"><img src="project3.png" alt="View 3"></a>
+        <a href="#bg1"><img src="project1.png"></a>
+        <a href="#bg2"><img src="project2.png"></a>
+        <a href="#bg3"><img src="project3.png"></a>
       </div>
-      <p class="georgian-text">ინდივიდუალური საცხოვრებელი სახლი ''OROKO LISI''-ს უბანში.</p>
+      <p class="georgian-text">ინდივიდუალური საცხოვრებელი სახლი OROKO LISI-ში.</p>
     </div>
 
-    <!-- Project 2 -->
+    <!-- Additional Projects -->
+    <div class="project-card">
+      <h3>Design Build მეთოდით , რეკონსტრუქციის პრეოქტი , ქ. ქუთაისის N27 საბავშვო ბაღი.</h3>
+      <div class="project-images">
+        <a href="#bg1"><img src="bg1.png"></a>
+        <a href="#bg2"><img src="bg2.png"></a>
+        <a href="#bg3"><img src="bg3.png"></a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>დასახლება OROKO LISI,ინდივიდუალური საცხოვრებელი სახლი.</h3>
+      <div class="project-images">
+        <a href="#gi1"><img src="gi1.png"></a>
+        <a href="#gi2"><img src="gi2.png"></a>
+        <a href="#gi3"><img src="gi3.png"></a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>დასახლება OROKO LISI,ინდივიდუალური საცხოვრებელი სახლი.</h3>
+      <div class="project-images">
+        <a href="#zk1"><img src="zk1.png"></a>
+        <a href="#zk2"><img src="zk2.png"></a>
+        <a href="#zk3"><img src="zk3.png"></a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>დასახლება OROKO LISI,ინდივიდუალური საცხოვრებელი სახლი.</h3>
+      <div class="project-images">
+        <a href="#giuna1"><img src="giuna1.png"></a>
+        <a href="#giuna2"><img src="giuna2.png"></a>
+        <a href="#giuna3"><img src="giuna3.png"></a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>კომერციული ფართი ,დასახლება OROKO LISI</h3>
+      <div class="project-images">
+        <a href="#kf1"><img src="kf1.jpg"></a>
+        <a href="#kf2"><img src="kf2.jpg"></a>
+        <a href="#kf3"><img src="kf3.jpg"></a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>დასახლება OROKO LISI,ინდივიდუალური საცხოვრებელი სახლი.</h3>
+      <div class="project-images">
+        <a href="#gigi1"><img src="gigi1.png"></a>
+        <a href="#gigi2"><img src="gigi2.png"></a>
+        <a href="#gigi3"><img src="gigi3.png"></a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>დასახლება OROKO LISI,ინდივიდუალური საცხოვრებელი სახლი.</h3>
+      <div class="project-images">
+        <a href="#koka1"><img src="koka1.png"></a>
+        <a href="#koka2"><img src="koka2.png"></a>
+        <a href="#koka3"><img src="koka3.png"></a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>დასახლება OROKO LISI,ინდივიდუალური საცხოვრებელი სახლი.</h3>
+      <div class="project-images">
+        <a href="#zkzk1"><img src="zkzk1.png"></a>
+        <a href="#zkzk2"><img src="zkzk2.png"></a>
+        <a href="#zkzk3"><img src="zkzk3.png"></a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>დასახლება OROKO LISI,ინდივიდუალური საცხოვრებელი სახლი.</h3>
+      <div class="project-images">
+        <a href="#gigigi1"><img src="gigigi1.png"></a>
+        <a href="#gigigi2"><img src="gigigi2.png"></a>
+        <a href="#gigigi3"><img src="gigigi3.png"></a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>დასახლება OROKO LISI,ინდივიდუალური საცხოვრებელი სახლი.</h3>
+      <div class="project-images">
+        <a href="#kokli1"><img src="kokli1.png"></a>
+        <a href="#kokli2"><img src="kokli2.png"></a>
+        <a href="#kokli3"><img src="kokli3.png"></a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>დასახლება OROKO LISI,ინდივიდუალური საცხოვრებელი სახლი.</h3>
+      <div class="project-images">
+        <a href="#koks1"><img src="koks1.png"></a>
+        <a href="#koks2"><img src="koks2.png"></a>
+        <a href="#koks3"><img src="koks3.png"></a>
+      </div>
+    </div>
     <div class="project-card">
       <h3>Crimson Noir</h3>
       <div class="project-images">
-        <a href="#img4"><img src="crimson1.png" alt="Crimson View 1"></a>
-        <a href="#img5"><img src="crimson2.png" alt="Crimson View 2"></a>
-        <a href="#img6"><img src="crimson3.png" alt="Crimson View 3"></a>
+        <a href="#crimson1"><img src="crimson1.png"></a>
+        <a href="#crimson2"><img src="crimson2.png"></a>
+        <a href="#crimson3"><img src="crimson3.png"></a>
       </div>
-      <p class="georgian-text">თანამედროვე ინტერიერის პროექტი წითელი და შავი ფერის თემატიკით.</p>
     </div>
 
-    <!-- Project 3 -->
+    <!-- Forest Project -->
     <div class="project-card">
-      <h3>The Rooted Monolith</h3>
+      <h3>Forest Project</h3>
       <div class="project-images">
-        <a href="#img7"><img src="rooted1.png" alt="Monolith View 1"></a>
-        <a href="#img8"><img src="rooted2.png" alt="Monolith View 2"></a>
-        <a href="#img9"><img src="rooted3.png" alt="Monolith View 3"></a>
+        <a href="#forest1"><img src="forest1.png"></a>
+        <a href="#forest2"><img src="forest2.png"></a>
+        <a href="#forest3"><img src="forest3.png"></a>
       </div>
-      <p class="georgian-text">ბუნებაში ჩადგმული მონოლითური სტრუქტურა – ინტეგრაცია და სიმტკიცე.</p>
     </div>
 
-    <!-- Project 4 -->
+    <!-- Rooted Project -->
     <div class="project-card">
-      <h3>Forest Within</h3>
+      <h3>Rooted Project</h3>
       <div class="project-images">
-        <a href="#img10"><img src="forest1.png" alt="Forest View 1"></a>
-        <a href="#img11"><img src="forest2.png" alt="Forest View 2"></a>
-        <a href="#img12"><img src="forest3.png" alt="Forest View 3"></a>
+        <a href="#rooted1"><img src="rooted1.png"></a>
+        <a href="#rooted2"><img src="rooted2.png"></a>
+        <a href="#rooted3"><img src="rooted3.png"></a>
       </div>
-      <p class="georgian-text">ინტერიერი, რომელიც ქმნის ტყის განცდას ქალაქის სივრცეში.</p>
     </div>
+
   </section>
 
-  <!-- Modals -->
-  <div id="img1" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="project1.png" alt="View 1"></div>
-  <div id="img2" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="project2.png" alt="View 2"></div>
-  <div id="img3" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="project3.png" alt="View 3"></div>
+  <!-- MODALS -->
+  <!-- Existing modals -->
+  <div id="bg1" class="modal"><img src="bg1.png"></div>
+  <div id="bg2" class="modal"><img src="bg2.png"></div>
+  <div id="bg3" class="modal"><img src="bg3.png"></div>
+  <div id="gi1" class="modal"><img src="gi1.png"></div>
+  <div id="gi2" class="modal"><img src="gi2.png"></div>
+  <div id="gi3" class="modal"><img src="gi3.png"></div>
+  <div id="zk1" class="modal"><img src="zk1.png"></div>
+  <div id="zk2" class="modal"><img src="zk2.png"></div>
+  <div id="zk3" class="modal"><img src="zk3.png"></div>
+  <div id="giuna1" class="modal"><img src="giuna1.png"></div>
+  <div id="giuna2" class="modal"><img src="giuna2.png"></div>
+  <div id="giuna3" class="modal"><img src="giuna3.png"></div>
+  <div id="kf1" class="modal"><img src="kf1.jpg"></div>
+  <div id="kf2" class="modal"><img src="kf2.jpg"></div>
+  <div id="kf3" class="modal"><img src="kf3.jpg"></div>
+  <div id="gigi1" class="modal"><img src="gigi1.png"></div>
+  <div id="gigi2" class="modal"><img src="gigi2.png"></div>
+  <div id="gigi3" class="modal"><img src="gigi3.png"></div>
+  <div id="koka1" class="modal"><img src="koka1.png"></div>
+  <div id="koka2" class="modal"><img src="koka2.png"></div>
+  <div id="koka3" class="modal"><img src="koka3.png"></div>
+  <div id="zkzk1" class="modal"><img src="zkzk1.png"></div>
+  <div id="zkzk2" class="modal"><img src="zkzk2.png"></div>
+  <div id="zkzk3" class="modal"><img src="zkzk3.png"></div>
+  <div id="gigigi1" class="modal"><img src="gigigi1.png"></div>
+  <div id="gigigi2" class="modal"><img src="gigigi2.png"></div>
+  <div id="gigigi3" class="modal"><img src="gigigi3.png"></div>
+  <div id="kokli1" class="modal"><img src="kokli1.png"></div>
+  <div id="kokli2" class="modal"><img src="kokli2.png"></div>
+  <div id="kokli3" class="modal"><img src="kokli3.png"></div>
+  <div id="koks1" class="modal"><img src="koks1.png"></div>
+  <div id="koks2" class="modal"><img src="koks2.png"></div>
+  <div id="koks3" class="modal"><img src="koks3.png"></div>
+  <div id="crimson1" class="modal"><img src="crimson1.png"></div>
+  <div id="crimson2" class="modal"><img src="crimson2.png"></div>
+  <div id="crimson3" class="modal"><img src="crimson3.png"></div>
 
-  <div id="img4" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="crimson1.png" alt="Crimson View 1"></div>
-  <div id="img5" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="crimson2.png" alt="Crimson View 2"></div>
-  <div id="img6" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="crimson3.png" alt="Crimson View 3"></div>
+  <!-- Forest Modals -->
+  <div id="forest1" class="modal"><img src="forest1.png"></div>
+  <div id="forest2" class="modal"><img src="forest2.png"></div>
+  <div id="forest3" class="modal"><img src="forest3.png"></div>
 
-  <div id="img7" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="rooted1.png" alt="Monolith View 1"></div>
-  <div id="img8" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="rooted2.png" alt="Monolith View 2"></div>
-  <div id="img9" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="rooted3.png" alt="Monolith View 3"></div>
-
-  <div id="img10" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="forest1.png" alt="Forest View 1"></div>
-  <div id="img11" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="forest2.png" alt="Forest View 2"></div>
-  <div id="img12" class="modal"><button class="close-btn" onclick="window.location='#';">×</button><img src="forest3.png" alt="Forest View 3"></div>
+  <!-- Rooted Modals -->
+  <div id="rooted1" class="modal"><img src="rooted1.png"></div>
+  <div id="rooted2" class="modal"><img src="rooted2.png"></div>
+  <div id="rooted3" class="modal"><img src="rooted3.png"></div>
 
   <footer>
-    <a href="https://www.facebook.com/profile.php?id=61556435062329" target="_blank" rel="noopener noreferrer">
-      <img src="facebook-logo.png" alt="Facebook" />
-      Facebook
-    </a>
-    <a href="https://www.instagram.com/_arcwave__/" target="_blank" rel="noopener noreferrer">
-      <img src="instagram-logo.png" alt="Instagram" />
-      Instagram
-    </a>
+    <a href="#"><img src="facebook-logo.png">Facebook</a>
+    <a href="#"><img src="instagram-logo.png">Instagram</a>
   </footer>
+
+  <script>
+    // Open modal
+    const imageLinks = document.querySelectorAll('.project-images a');
+    imageLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const modalId = link.getAttribute('href').substring(1);
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'flex';
+      });
+    });
+
+    // Handle modal close
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      // Close on background click
+      modal.addEventListener('click', e => {
+        if(e.target === modal){
+          modal.style.display = 'none';
+        }
+      });
+      // Add close button
+      const closeBtn = document.createElement('button');
+      closeBtn.className = 'close-btn';
+      closeBtn.innerHTML = '×';
+      modal.appendChild(closeBtn);
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+    });
+  </script>
 </body>
 </html>
