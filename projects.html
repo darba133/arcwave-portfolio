@@ -132,9 +132,9 @@
     <div class="project-card">
       <h3>დასახლება OROKO LISI,ინდივიდუალური საცხოვრებელი სახლი.</h3>
       <div class="project-images">
-        <a href="#bg1"><img src="project1.png"></a>
-        <a href="#bg2"><img src="project2.png"></a>
-        <a href="#bg3"><img src="project3.png"></a>
+        <a href="#project1Modal"><img src="project1.png"></a>
+        <a href="#project2Modal"><img src="project2.png"></a>
+        <a href="#project3Modal"><img src="project3.png"></a>
       </div>
       <p class="georgian-text">ინდივიდუალური საცხოვრებელი სახლი OROKO LISI-ში.</p>
     </div>
@@ -260,6 +260,11 @@
   </section>
 
   <!-- MODALS -->
+  <!-- New modals for first project -->
+  <div id="project1Modal" class="modal"><img src="project1.png"></div>
+  <div id="project2Modal" class="modal"><img src="project2.png"></div>
+  <div id="project3Modal" class="modal"><img src="project3.png"></div>
+
   <!-- Existing modals -->
   <div id="bg1" class="modal"><img src="bg1.png"></div>
   <div id="bg2" class="modal"><img src="bg2.png"></div>
@@ -297,13 +302,9 @@
   <div id="crimson1" class="modal"><img src="crimson1.png"></div>
   <div id="crimson2" class="modal"><img src="crimson2.png"></div>
   <div id="crimson3" class="modal"><img src="crimson3.png"></div>
-
-  <!-- Forest Modals -->
   <div id="forest1" class="modal"><img src="forest1.png"></div>
   <div id="forest2" class="modal"><img src="forest2.png"></div>
   <div id="forest3" class="modal"><img src="forest3.png"></div>
-
-  <!-- Rooted Modals -->
   <div id="rooted1" class="modal"><img src="rooted1.png"></div>
   <div id="rooted2" class="modal"><img src="rooted2.png"></div>
   <div id="rooted3" class="modal"><img src="rooted3.png"></div>
@@ -328,13 +329,11 @@
     // Handle modal close
     const modals = document.querySelectorAll('.modal');
     modals.forEach(modal => {
-      // Close on background click
       modal.addEventListener('click', e => {
         if(e.target === modal){
           modal.style.display = 'none';
         }
       });
-      // Add close button
       const closeBtn = document.createElement('button');
       closeBtn.className = 'close-btn';
       closeBtn.innerHTML = '×';
